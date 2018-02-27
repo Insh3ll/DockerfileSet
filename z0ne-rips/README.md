@@ -21,7 +21,9 @@
 ## 快速启动
 `docker run -d -ti --name rips -p 8080:80 -v /path/php/src:/phpsrc z0ne-rips`
 
-启动后访问http://ip:8080/rips，浏览器中输入Web服务器地址和对应目录，这里映射的是`/phpsrc`目录
+启动后访问`http://ip:8080/rips`
+
+浏览器中输入Web服务器地址和对应目录，这里映射的是`/phpsrc`目录
 
 ## 演示
 
