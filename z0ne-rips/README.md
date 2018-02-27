@@ -24,7 +24,8 @@
 启动后访问http://ip:8080/rips，浏览器中输入Web服务器地址和对应目录，这里映射的是`/phpsrc`目录
 
 ## 演示
-![](https://github.com/Insh3ll/DockerfileSet/blob/master/z0ne-rips/1.png)
+
+![演示图片1](https://github.com/Insh3ll/DockerfileSet/master/z0ne-rips/1.png)
 
 
-![](https://github.com/Insh3ll/DockerfileSet/blob/master/z0ne-rips/2.png)
+![演示图片2](https://github.com/Insh3ll/DockerfileSet/master/z0ne-rips/2.png)
