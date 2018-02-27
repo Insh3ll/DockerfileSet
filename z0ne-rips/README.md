@@ -25,7 +25,7 @@
 
 ## 演示
 
-![演示图片1](https://github.com/Insh3ll/DockerfileSet/master/z0ne-rips/1.png)
+![演示图片1](https://github.com/Insh3ll/DockerfileSet/blob/master/z0ne-rips/1.png)
 
 
-![演示图片2](https://github.com/Insh3ll/DockerfileSet/master/z0ne-rips/2.png)
+![演示图片2](https://github.com/Insh3ll/DockerfileSet/blob/master/z0ne-rips/2.png)
