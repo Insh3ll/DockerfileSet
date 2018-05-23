@@ -1,0 +1,30 @@
+FROM kalilinux/kali-linux-docker
+
+# 配置镜像源
+RUN sed -i 's/http.kali.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+    
+RUN apt-get update && \
+    apt install -y zsh vim git-core openssh-server && \
+    apt install -y metasploit-framework && \
+    rm -rf /var/lib/apt/lists/*
+
+# 配置zsh
+RUN git clone https://github.com/robbyrussell/oh-my-zsh.git /root/.oh-my-zsh && \
+    cp /root/.oh-my-zsh/templates/zshrc.zsh-template /root/.zshrc && \
+    chsh -s /bin/zsh
+
+# 配置ssh
+RUN mkdir /var/run/sshd && \
+    echo "root:toor" | chpasswd && \ 
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+# 配置中文环境
+RUN sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen && \
+    sed -i 's/# zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen && \
+    locale-gen
+ENV LANG=zh_CN.UTF-8 LANGUAGE=zh_CN:zh LC_ALL=zh_CN.UTF-8
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
